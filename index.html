@@ -5,14 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <title>Detailing Automotriz en Montevideo | Lavado Premium y Cerámico</title>
-<meta name="description" content="Detailing automotriz profesional en Montevideo. Lavado premium, corrección de pintura, protección cerámica e interior con vapor. Reservá por WhatsApp.">
-<meta name="keywords" content="detailing Montevideo, lavado premium Uruguay, pulido automotriz Montevideo, cerámico autos Uruguay">
-<meta name="author" content="Detailing Automotriz Montevideo">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Detailing Profesional en Montevideo">
-<meta property="og:description" content="Brillo real. Protección real. Reservá tu turno hoy.">
-<meta property="og:type" content="website">
+<meta name="description" content="Detailing automotriz profesional en Montevideo. Lavado premium, corrección de pintura, protección cerámica e interior con vapor. Reservá tu turno online.">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,14 +14,14 @@ body{background:#0b0b0b;color:#fff;font-family:-apple-system,BlinkMacSystemFont,
 .hero{background:url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2') center/cover no-repeat;height:90vh;display:flex;align-items:center;text-align:center;position:relative;}
 .hero::before{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.75);}
 .hero-content{position:relative;z-index:2;padding:20px;}
-.btn-main{background:#25D366;border:none;font-weight:700;padding:14px;width:100%;border-radius:12px;}
+.btn-main{background:#25D366;border:none;font-weight:700;padding:14px;width:100%;border-radius:12px;color:#fff;}
 .section{padding:50px 20px;}
 .service-card{background:#141414;border-radius:15px;padding:20px;margin-bottom:15px;}
 .price{font-weight:700;font-size:18px;margin-top:10px;}
 .sticky-whatsapp{position:fixed;bottom:0;left:0;width:100%;background:#25D366;text-align:center;padding:15px;font-weight:700;z-index:999;}
 .sticky-whatsapp a{color:white;text-decoration:none;font-size:18px;}
-.counter{font-size:22px;font-weight:700;color:#25D366;}
-.testimonial{background:#141414;padding:20px;border-radius:15px;}
+.testimonial-card{background:#141414;padding:20px;border-radius:15px;margin-bottom:15px;}
+input, select, textarea{background:#1a1a1a!important;border:none!important;color:#fff!important;}
 </style>
 </head>
 
@@ -39,90 +32,107 @@ body{background:#0b0b0b;color:#fff;font-family:-apple-system,BlinkMacSystemFont,
 <div class="hero-content">
 <h1 class="fw-bold">Detailing Profesional en Montevideo</h1>
 <p>Brillo real. Protección real. Resultados reales.</p>
-<button class="btn btn-main mt-3"
-onclick="sendWhats('Consulta general')">
-Reservar Turno Ahora
-</button>
+<a href="#reserva" class="btn btn-main mt-3">Reservar Turno</a>
 </div>
-</section>
-
-<!-- CONTADOR URGENCIA -->
-<section class="section text-center">
-<h4>Turnos disponibles esta semana</h4>
-<div class="counter" id="countdown"></div>
 </section>
 
 <!-- SERVICIOS -->
 <section class="section">
-<h3 class="mb-4">Servicios</h3>
+<h3 class="mb-4 text-center">Servicios</h3>
 
 <div class="service-card">
 <h5>🚿 Lavado Premium</h5>
 <p>Espuma activa + técnica segura + brillo profesional</p>
 <div class="price">Desde $1.200</div>
-<button class="btn btn-main mt-2" onclick="sendWhats('Lavado Premium')">Consultar</button>
 </div>
 
 <div class="service-card">
 <h5>✨ Descontaminación</h5>
 <p>Eliminación de brea y contaminación adherida</p>
 <div class="price">Desde $2.500</div>
-<button class="btn btn-main mt-2" onclick="sendWhats('Descontaminación')">Consultar</button>
 </div>
 
 <div class="service-card">
 <h5>🔥 Corrección de Pintura</h5>
 <p>Eliminación de micro rayas + efecto espejo</p>
 <div class="price">Desde $4.500</div>
-<button class="btn btn-main mt-2" onclick="sendWhats('Corrección de Pintura')">Consultar</button>
 </div>
 
 <div class="service-card">
 <h5>🛡 Protección Cerámica</h5>
 <p>Sellado profesional + hidrofobicidad</p>
 <div class="price">Desde $7.900</div>
-<button class="btn btn-main mt-2" onclick="sendWhats('Protección Cerámica')">Consultar</button>
 </div>
 
 <div class="service-card">
 <h5>💨 Interior + Vapor</h5>
 <p>Aspirado profundo + sanitización completa</p>
 <div class="price">Desde $2.000</div>
-<button class="btn btn-main mt-2" onclick="sendWhats('Interior con Vapor')">Consultar</button>
 </div>
 
 </section>
 
-<!-- ANTES / DESPUÉS -->
-<section class="section text-center">
-<h3>Resultados Reales</h3>
-<p>No prometemos. Mostramos.</p>
-<img src="https://images.unsplash.com/photo-1617814076668-1d0d0b4a1e2f" class="img-fluid rounded mt-3">
+<!-- FORMULARIO RESERVA -->
+<section class="section" id="reserva">
+<h3 class="text-center mb-4">Reservar Turno</h3>
+
+<form id="reservaForm">
+<div class="mb-3">
+<label>Nombre</label>
+<input type="text" class="form-control" id="nombre" required>
+</div>
+
+<div class="mb-3">
+<label>Modelo del vehículo</label>
+<input type="text" class="form-control" id="modelo" required>
+</div>
+
+<div class="mb-3">
+<label>Servicio</label>
+<select class="form-control" id="servicio" required>
+<option value="">Seleccionar</option>
+<option>Lavado Premium</option>
+<option>Descontaminación</option>
+<option>Corrección de Pintura</option>
+<option>Protección Cerámica</option>
+<option>Interior + Vapor</option>
+</select>
+</div>
+
+<div class="mb-3">
+<label>Fecha deseada</label>
+<input type="date" class="form-control" id="fecha" required>
+</div>
+
+<div class="mb-3">
+<label>Comentario (opcional)</label>
+<textarea class="form-control" id="comentario"></textarea>
+</div>
+
+<button type="submit" class="btn btn-main">Enviar Reserva</button>
+</form>
+
 </section>
 
 <!-- TESTIMONIOS -->
 <section class="section">
-<h3 class="text-center mb-4">Clientes Satisfechos</h3>
+<h3 class="text-center mb-4">Lo que dicen nuestros clientes</h3>
 
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-inner">
-
-<div class="carousel-item active">
-<div class="testimonial text-center">
-<p>"El auto quedó mejor que cuando lo compré."</p>
-<strong>- Cliente Montevideo</strong>
-</div>
+<div class="testimonial-card">
+<p>"El auto quedó mejor que cuando lo compré. Atención impecable."</p>
+<strong>- Martín, Montevideo</strong>
 </div>
 
-<div class="carousel-item">
-<div class="testimonial text-center">
-<p>"Increíble el brillo después del cerámico."</p>
-<strong>- Cliente Punta Carretas</strong>
-</div>
+<div class="testimonial-card">
+<p>"La protección cerámica es impresionante, el brillo es otro nivel."</p>
+<strong>- Rodrigo, Pocitos</strong>
 </div>
 
+<div class="testimonial-card">
+<p>"El interior quedó como nuevo, eliminó todos los olores."</p>
+<strong>- Lucía, Punta Carretas</strong>
 </div>
-</div>
+
 </section>
 
 <!-- MAPA -->
@@ -132,15 +142,6 @@ Reservar Turno Ahora
 width="100%" height="250" style="border:0;border-radius:15px;"></iframe>
 </section>
 
-<!-- CTA FINAL -->
-<section class="section text-center">
-<h4>¿Querés que tu auto vuelva a verse como nuevo?</h4>
-<button class="btn btn-main"
-onclick="sendWhats('Quiero agendar un turno')">
-Agendar Ahora
-</button>
-</section>
-
 <!-- BOTÓN FIJO -->
 <div class="sticky-whatsapp">
 <a href="https://wa.me/59892214516?text=Hola,%20quiero%20reservar%20un%20turno">
@@ -148,30 +149,24 @@ Escribirme por WhatsApp
 </a>
 </div>
 
-<!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-function sendWhats(servicio){
-const mensaje = `Hola, quiero consultar por ${servicio}.`;
+document.getElementById("reservaForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+const nombre = document.getElementById("nombre").value;
+const modelo = document.getElementById("modelo").value;
+const servicio = document.getElementById("servicio").value;
+const fecha = document.getElementById("fecha").value;
+const comentario = document.getElementById("comentario").value;
+
+const mensaje = `Hola, soy ${nombre}.
+Quiero reservar el servicio de ${servicio}.
+Vehículo: ${modelo}.
+Fecha deseada: ${fecha}.
+Comentario: ${comentario}`;
+
 window.location.href = `https://wa.me/59892214516?text=${encodeURIComponent(mensaje)}`;
-}
-
-// Contador simple (simulación de urgencia semanal)
-let spots = 5;
-document.getElementById("countdown").innerText = spots + " turnos disponibles";
-
-</script>
-
-<!-- Schema LocalBusiness -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "AutoRepair",
- "name": "Detailing Automotriz Montevideo",
- "areaServed": "Montevideo, Uruguay",
- "telephone": "+59892214516"
-}
+});
 </script>
 
 </body>
