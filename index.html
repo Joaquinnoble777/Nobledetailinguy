@@ -514,6 +514,123 @@
 </div>
 </section>
 
+<!-- FORMULARIO DE RESERVA -->
+<section class="section" id="reserva">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8">
+
+<div class="form-card">
+
+<h2 class="mb-4 text-center">Reservá tu turno online</h2>
+<p class="text-secondary text-center mb-4">
+Completá el formulario y te contactaremos para confirmar el turno.
+</p>
+
+<form id="reservaForm">
+
+<div class="row g-3">
+
+<div class="col-md-6">
+<label class="form-label">Nombre completo</label>
+<input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez" required>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Modelo del vehículo</label>
+<input type="text" class="form-control" id="modelo" placeholder="Ej: Chevrolet Onix 2022" required>
+</div>
+
+<div class="col-12">
+<label class="form-label">Servicio deseado</label>
+<select class="form-select" id="servicio" required>
+
+<option value="" selected disabled>Seleccioná un servicio</option>
+
+<option>💦 Lavado Exterior ($500)</option>
+
+<option>🧽 Lavado + Descontaminado ($2.500)</option>
+
+<option>🛡️ Descontaminado + Sellado Cerámico ($5.000)</option>
+
+<option>✨ Pulido y Eliminación de Micro Rayas ($4.500)</option>
+
+<option>💎 Tratamiento Cerámico Completo ($7.500)</option>
+
+<option>🔦 Pulido de Ópticas ($2.000)</option>
+
+<option>🧼 Lavado de Motor ($5.000)</option>
+
+<option>🪑 Lavado de Butacas ($2.000)</option>
+
+<option>🔥 Lavado de Butacas + Lavado Exterior ($3.500)</option>
+
+</select>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Fecha deseada</label>
+<input type="date" class="form-control" id="fecha" required>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Hora aproximada</label>
+<input type="time" class="form-control" id="hora">
+</div>
+
+<div class="col-12">
+<label class="form-label">Comentarios</label>
+<textarea class="form-control" id="comentario" rows="3" placeholder="Ej: manchas en butacas, rayas en pintura, etc."></textarea>
+</div>
+
+<div class="col-12 mt-4">
+<button type="submit" class="btn btn-main w-100 py-3">
+Enviar reserva por WhatsApp
+</button>
+</div>
+
+</div>
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<script>
+
+document.getElementById("reservaForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const nombre = document.getElementById("nombre").value;
+const modelo = document.getElementById("modelo").value;
+const servicio = document.getElementById("servicio").value;
+const fecha = document.getElementById("fecha").value;
+const hora = document.getElementById("hora").value || "A coordinar";
+const comentario = document.getElementById("comentario").value || "Sin comentarios";
+
+const mensaje = `Hola! Quiero reservar un turno.
+
+👤 Nombre: ${nombre}
+🚗 Vehículo: ${modelo}
+🛠 Servicio: ${servicio}
+📅 Fecha: ${fecha}
+⏰ Hora: ${hora}
+📝 Comentario: ${comentario}
+
+Quedo atento a la confirmación.`;
+
+window.open(`https://wa.me/59892214516?text=${encodeURIComponent(mensaje)}`);
+
+});
+
+</script>
+
+
     <!-- TESTIMONIOS -->
     <section class="section" id="testimonios">
         <div class="container">
