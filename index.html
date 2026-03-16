@@ -3,759 +3,688 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Ultra Detailing | Profesionales en Montevideo</title>
-    <meta name="description" content="Expertos en detailing automotriz en Montevideo. Ofrecemos lavado premium, corrección de pintura, tratamiento cerámico y más. Calidad profesional y resultados garantizados.">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts (opcional, para mejor tipografía) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap Icons (para íconos bonitos) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+    <title>EZE Detailing – Detailing profesional</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
+
         body {
-            background-color: #000000;
-            color: #e0e0e0;
-        }
-        
-        /* Header */
-        .navbar {
-            background-color: rgba(0,0,0,0.9);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            border-bottom: 1px solid #222;
-        }
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 24px;
-            color: #fff !important;
-            letter-spacing: 1px;
-        }
-        .navbar-brand span {
-            color: #FBBF24; /* Dorado/ámbar para acento */
-        }
-        .nav-link {
-            color: #ccc !important;
-            font-weight: 500;
-            margin: 0 10px;
-        }
-        .nav-link:hover {
-            color: #FBBF24 !important;
+            background-color: #0b0b0b;
+            color: #f0f0f0;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            margin-top: 76px; /* Altura del navbar */
+        /* paleta premium: negro carbón, rojo brillante, blanco puro */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #151515;
+            --accent-red: #e31c23;
+            --accent-red-hover: #c00;
+            --text-light: #ffffff;
+            --text-muted: #bbbbbb;
+            --border-dim: #2a2a2a;
         }
-        .hero-content {
-            max-width: 700px;
+
+        /* tipografia */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid var(--accent-red);
+            padding-left: 1.2rem;
+        }
+
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        .hero .highlight {
-            color: #FBBF24;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: #aaa;
-            margin-bottom: 30px;
+            padding: 0 24px;
         }
 
-        /* Botones */
-        .btn-main {
-            background-color: #FBBF24;
-            color: #000;
-            font-weight: 700;
-            padding: 14px 35px;
-            border-radius: 50px;
+        /* botones */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 60px;
+            text-decoration: none;
             border: none;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-size: 1rem;
+            box-shadow: 0 8px 16px rgba(227, 28, 35, 0.25);
+            border: 1px solid rgba(255,255,255,0.05);
         }
-        .btn-main:hover {
-            background-color: #f59e0b;
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+        .btn:hover {
+            background-color: var(--accent-red-hover);
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(227, 28, 35, 0.4);
         }
         .btn-outline {
             background: transparent;
-            border: 2px solid #FBBF24;
-            color: #FBBF24;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 50px;
-            transition: all 0.3s;
+            border: 2px solid var(--accent-red);
+            color: white;
+            box-shadow: none;
         }
         .btn-outline:hover {
-            background-color: #FBBF24;
-            color: #000;
-        }
-        .btn-wa {
-            background-color: #25D366;
-            color: #fff;
-            border-radius: 50px;
-            padding: 12px 25px;
-            font-weight: 600;
-            border: none;
-        }
-        .btn-wa:hover {
-            background-color: #20bd5a;
-            color: #fff;
+            background: var(--accent-red);
         }
 
-        /* Secciones */
-        .section {
-            padding: 80px 20px;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
+        /* header / hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
             position: relative;
-            display: inline-block;
+            background: radial-gradient(circle at 70% 30%, #1e1e1e, #000000 80%);
         }
-        .section-title:after {
-            content: '';
+        .hero::after {
+            content: "";
             position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: #FBBF24;
-            border-radius: 2px;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1603584173870-7be23a59b2c7?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            opacity: 0.4;
+            mix-blend-mode: overlay;
+            pointer-events: none;
         }
-        .text-gold {
-            color: #FBBF24;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero .sub {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .hero .btn {
+            font-size: 1.3rem;
+            padding: 18px 48px;
         }
 
-        /* Tarjetas de servicios */
+        /* secciones */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-dim);
+        }
+
+        /* servicios - tarjetas */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
         .service-card {
-            background: #111;
-            border-radius: 20px;
-            padding: 30px 25px;
-            height: 100%;
-            border: 1px solid #222;
-            transition: all 0.3s;
-            position: relative;
+            background: var(--bg-card);
+            border-radius: 28px;
             overflow: hidden;
+            border: 1px solid #2c2c2c;
+            transition: 0.25s ease;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.8);
         }
         .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #FBBF24;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            transform: translateY(-6px);
+            border-color: var(--accent-red);
+            box-shadow: 0 30px 40px -12px #e31c2330;
         }
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #FBBF24;
+        .card-img {
+            height: 190px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
-        .service-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        .service-desc {
-            color: #aaa;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        .service-price {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #FBBF24;
-            margin-bottom: 20px;
-        }
-        .service-price small {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #666;
-        }
-        .service-badge {
+        /* brillo extremo con overlay de luz */
+        .card-img::after {
+            content: "";
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #FBBF24;
-            color: #000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .card-content {
+            padding: 22px 20px 25px;
+        }
+        .card-content h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 1.5rem;
+            color: var(--accent-red);
             font-weight: 700;
-            font-size: 0.75rem;
-            padding: 5px 10px;
-            border-radius: 50px;
+            margin: 12px 0 10px;
         }
-
-        /* Tarjetas de testimonio */
-        .testimonial-card {
-            background: #111;
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid #222;
-            height: 100%;
-            transition: 0.3s;
+        .desc-list {
+            list-style: none;
+            margin: 16px 0;
         }
-        .testimonial-card:hover {
-            border-color: #FBBF24;
-        }
-        .testimonial-text {
-            font-style: italic;
-            color: #ddd;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        .testimonial-author {
-            font-weight: 700;
-            color: #FBBF24;
-        }
-
-        /* Formulario */
-        .form-card {
-            background: #111;
-            border-radius: 30px;
-            padding: 40px;
-            border: 1px solid #222;
-        }
-        .form-control, .form-select {
-            background: #1a1a1a !important;
-            border: 1px solid #333 !important;
-            color: #fff !important;
-            border-radius: 12px;
-            padding: 12px 15px;
-        }
-        .form-control:focus, .form-select:focus {
-            border-color: #FBBF24 !important;
-            box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.25);
-        }
-        .form-label {
-            font-weight: 500;
+        .desc-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
             color: #ccc;
+        }
+        .desc-list i {
+            color: var(--accent-red);
+            width: 20px;
+            font-size: 0.9rem;
+        }
+        .btn-card {
+            background: transparent;
+            border: 1px solid var(--accent-red);
+            border-radius: 40px;
+            padding: 10px 20px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 16px;
+            transition: 0.2s;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-card:hover {
+            background: var(--accent-red);
+        }
+
+        /* galería carrusel (antes/después) */
+        .gallery {
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-red) #222;
+        }
+        .carousel-track::-webkit-scrollbar {
+            height: 8px;
+        }
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: var(--accent-red);
+            border-radius: 20px;
+        }
+        .carousel-item {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            border-radius: 24px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+            filter: brightness(1.1) contrast(1.1);
+        }
+        .carousel-item .badge {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: #0f0f0f;
+            color: #ddd;
+            font-weight: 500;
+        }
+        .badge span:first-child { color: var(--accent-red); font-weight: 700; }
+
+        /* formulario de reserva */
+        .reserva-form {
+            background: #121212;
+            border-radius: 40px;
+            padding: 40px;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 25px 40px -15px black;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .form-group {
             margin-bottom: 8px;
         }
-
-        /* Features */
-        .feature-item {
-            text-align: center;
-            padding: 20px;
+        .form-group.full {
+            grid-column: span 2;
         }
-        .feature-icon {
-            font-size: 2.2rem;
-            color: #FBBF24;
-            margin-bottom: 15px;
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #ccc;
         }
-
-        /* Mapa */
-        .map-container {
+        input, select, textarea {
+            width: 100%;
+            background: #1e1e1e;
+            border: 1px solid #3a3a3a;
             border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #222;
+            padding: 15px 18px;
+            color: white;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 3px rgba(227,28,35,0.3);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
         }
 
-        /* Footer */
+        /* ubicación + footer */
+        .ubicacion-card {
+            background: #111;
+            border-radius: 50px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            border: 1px solid #2c2c2c;
+        }
         .footer {
-            background: #0a0a0a;
-            padding: 60px 0 30px;
+            background: #070707;
+            padding: 40px 0 30px;
             border-top: 1px solid #222;
         }
-        .footer h5 {
-            color: #fff;
-            margin-bottom: 20px;
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
         }
-        .footer a {
+        .social a {
+            color: white;
+            font-size: 1.8rem;
+            margin-left: 20px;
+            transition: 0.2s;
+        }
+        .social a:hover {
+            color: var(--accent-red);
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+            .hero h1 { font-size: 3rem; }
+            .ubicacion-card { flex-direction: column; text-align: center; }
+            .footer-content { flex-direction: column; gap: 25px; }
+            .social a { margin: 0 10px; }
+        }
+
+        /* micro */
+        .price-note {
+            font-size: 0.9rem;
             color: #aaa;
+        }
+        .whatsapp-link {
+            color: white;
             text-decoration: none;
-            transition: 0.3s;
         }
-        .footer a:hover {
-            color: #FBBF24;
-        }
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: #1a1a1a;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            color: #fff;
-        }
-        .social-icons a:hover {
-            background: #FBBF24;
-            color: #000;
-        }
-
-        /* WhatsApp Flotante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
+        .btn-wsp {
             background: #25D366;
-            color: #fff;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 35px;
-            line-height: 65px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: all 0.3s;
+            border: none;
+            box-shadow: 0 8px 16px #25D36640;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: #fff;
-            background: #20bd5a;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .section { padding: 60px 20px; }
-            .service-card { padding: 20px; }
-            .whatsapp-float { width: 55px; height: 55px; font-size: 30px; line-height: 55px; }
+        .btn-wsp:hover {
+            background: #20b859;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">ULTRA<span>DETAILING</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reserva">Reservar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1>EZE DETAILING –<br>Detailing profesional para tu vehículo</h1>
+        <p class="sub">Lavado premium, limpieza profunda y protección para tu auto o moto</p>
+        <a href="#reserva" class="btn" style="font-size: 1.4rem; padding: 18px 50px;">📅 Reservar turno</a>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="container" id="servicios">
+    <h2>🔥 Servicios premium</h2>
+    <div class="services-grid">
+        <!-- Plan Básico -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1974&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Plan Básico</h3>
+                <div class="price">$500</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Lavado exterior rápido</li>
+                    <li><i class="fas fa-check"></i> Aspirado interior</li>
+                    <li><i class="fas fa-gift"></i> Aromatización de regalo</li>
                 </ul>
-                <a href="#reserva" class="btn btn-outline ms-lg-3">Contacto</a>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
             </div>
         </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container hero-content text-center">
-            <h1>Detailing Profesional en <span class="highlight">Montevideo</span></h1>
-            <p class="lead">No maquillamos la pintura, la corregimos. Resultados de exhibición para autos que merecen lo mejor.</p>
-            <div class="d-flex gap-3 justify-content-center">
-                <a href="#reserva" class="btn btn-main">Reservá tu turno</a>
-                <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+        <!-- Lavado Premium -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1607860085242-4c9c1b2f47e5?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Lavado Premium</h3>
+                <div class="price">$1200</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Espuma activa</li>
+                    <li><i class="fas fa-check"></i> Limpieza profunda</li>
+                    <li><i class="fas fa-check"></i> Plásticos y cubiertas renovados</li>
+                    <li><i class="fas fa-check"></i> Aromatización</li>
+                </ul>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
             </div>
         </div>
-    </section>
-
-    <!-- FEATURES (Por qué nosotros) -->
-    <section class="section" id="nosotros">
-        <div class="container">
-            <h2 class="section-title text-center mx-auto">Por qué elegirnos</h2>
-            <p class="text-center text-secondary mb-5">Calidad, transparencia y pasión por el detalle</p>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-droplet"></i></div>
-                        <h4>Técnica Profesional</h4>
-                        <p class="text-secondary">Utilizamos productos de primera línea y métodos seguros para cada superficie.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
-                        <h4>Garantía de Satisfacción</h4>
-                        <p class="text-secondary">Nuestro trabajo habla por sí solo. Respaldo en cada servicio.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-star"></i></div>
-                        <h4>Pasión por los Autos</h4>
-                        <p class="text-secondary">Entendemos tu auto como si fuera nuestro. Cuidado extremo.</p>
-                    </div>
-                </div>
+        <!-- Pulido de Ópticas -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1627453955603-f0d06b826ad2?q=80&w=1974&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Pulido de Ópticas</h3>
+                <div class="price">$2000</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Restauración de faros opacos</li>
+                    <li><i class="fas fa-check"></i> Mejor visibilidad</li>
+                    <li><i class="fas fa-check"></i> Mejora estética</li>
+                </ul>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
             </div>
         </div>
-    </section>
-
-   
-
-
-<section class="section bg-black" id="servicios">
-<div class="container">
-<h2 class="section-title">Nuestros Servicios</h2>
-<p class="text-secondary mb-5">Elegí el servicio que tu auto necesita.</p>
-
-<div class="row g-4">
-
-<!-- Lavado básico -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-droplet"></i></div>
-<h3 class="service-title">💦 Lavado Exterior</h3>
-<p class="service-desc">Lavado con espuma activa, shampoo automotriz y secado con microfibra.</p>
-<div class="service-price">$500</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Lavado + descontaminado -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-droplet-half"></i></div>
-<h3 class="service-title">🧽 Lavado + Descontaminado</h3>
-<p class="service-desc">Elimina contaminación adherida a la pintura dejando la superficie completamente suave.</p>
-<div class="service-price">$2.500</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Sellado cerámico -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-shield"></i></div>
-<h3 class="service-title">🛡️ Descontaminado + Sellado Cerámico</h3>
-<p class="service-desc">Lavado, descontaminado y protección con blend cerámico para brillo y repelencia.</p>
-<div class="service-price">$5.000</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Pulido -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-gem"></i></div>
-<h3 class="service-title">✨ Pulido y Eliminación de Micro Rayas</h3>
-<p class="service-desc">Corrección de defectos leves y recuperación del brillo profundo de la pintura.</p>
-<div class="service-price">$4.500</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Tratamiento cerámico -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-stars"></i></div>
-<h3 class="service-title">💎 Tratamiento Cerámico</h3>
-<p class="service-desc">Lavado, descontaminado, pulido y protección cerámica completa.</p>
-<div class="service-price">$7.500</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Lavado de motor -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-gear"></i></div>
-<h3 class="service-title">🧼 Lavado de Motor</h3>
-<p class="service-desc">Limpieza segura y detallada del vano motor.</p>
-<div class="service-price">$5.000</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Pulido de ópticas -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-sun"></i></div>
-<h3 class="service-title">🔦 Pulido de Ópticas</h3>
-<p class="service-desc">Eliminación de opacidad y amarilleo en faros.</p>
-<div class="service-price">$2.000</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Lavado de butacas -->
-<div class="col-md-6 col-lg-4">
-<div class="service-card">
-<div class="service-icon"><i class="bi bi-chair"></i></div>
-<h3 class="service-title">🪑 Lavado de Butacas</h3>
-<p class="service-desc">Limpieza profunda con vapor e inyección extracción.</p>
-<div class="service-price">$2.000</div>
-<a href="#reserva" class="btn btn-outline w-100">Reservar</a>
-</div>
-</div>
-
-<!-- Oferta -->
-<div class="col-md-6 col-lg-6 mx-auto">
-<div class="service-card" style="border:2px solid #FBBF24;">
-<div class="service-badge">OFERTA</div>
-<div class="service-icon"><i class="bi bi-gift"></i></div>
-<h3 class="service-title">🪑 Lavado de Butacas + Lavado Exterior</h3>
-<p class="service-desc">Lavado profundo de butacas con lavado exterior incluido.</p>
-<div class="service-price">$3.500</div>
-<a href="#reserva" class="btn btn-main w-100">Reservar</a>
-</div>
-</div>
-
-</div>
-</div>
+        <!-- Lavado de Butacas con Vapor -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1621998071652-1e1f3eac61ea?q=80&w=1974&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Lavado de Butacas con Vapor</h3>
+                <div class="price">$2000</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Eliminación de manchas</li>
+                    <li><i class="fas fa-check"></i> Limpieza profunda</li>
+                    <li><i class="fas fa-check"></i> Eliminación de olores</li>
+                </ul>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
+            </div>
+        </div>
+        <!-- Limpieza de Tapizados Premium -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1610642372515-7b2b1b5d0b9d?q=80&w=1974&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Limpieza de Tapizados Premium</h3>
+                <div class="price">$3500</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Limpieza profunda de interior</li>
+                    <li><i class="fas fa-check"></i> Extracción de suciedad</li>
+                    <li><i class="fas fa-check"></i> Renovación total del tapizado</li>
+                </ul>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
+            </div>
+        </div>
+        <!-- Descontaminado + Sellado -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1669904841527-47c0a3d5b494?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Descontaminado + Sellado</h3>
+                <div class="price">$5000</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Descontaminado con clay bar</li>
+                    <li><i class="fas fa-check"></i> Protección con cera híbrida</li>
+                    <li><i class="fas fa-check"></i> Brillo profundo y efecto repelente</li>
+                </ul>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
+            </div>
+        </div>
+        <!-- Servicio Premium Completo -->
+        <div class="service-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1612825173281-9a193378527e?q=80&w=1974&auto=format&fit=crop');"></div>
+            <div class="card-content">
+                <h3>Premium Completo</h3>
+                <div class="price">$7500</div>
+                <ul class="desc-list">
+                    <li><i class="fas fa-check"></i> Lavado profundo</li>
+                    <li><i class="fas fa-check"></i> Descontaminado</li>
+                    <li><i class="fas fa-check"></i> Pulido + Sellado protector</li>
+                </ul>
+                <a href="#reserva" class="btn-card">Seleccionar</a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- FORMULARIO DE RESERVA -->
-<section class="section" id="reserva">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-lg-8">
-
-<div class="form-card">
-
-<h2 class="mb-4 text-center">Reservá tu turno online</h2>
-<p class="text-secondary text-center mb-4">
-Completá el formulario y te contactaremos para confirmar el turno.
-</p>
-
-<form id="reservaForm">
-
-<div class="row g-3">
-
-<div class="col-md-6">
-<label class="form-label">Nombre completo</label>
-<input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez" required>
-</div>
-
-<div class="col-md-6">
-<label class="form-label">Modelo del vehículo</label>
-<input type="text" class="form-control" id="modelo" placeholder="Ej: Chevrolet Onix 2022" required>
-</div>
-
-<div class="col-12">
-<label class="form-label">Servicio deseado</label>
-<select class="form-select" id="servicio" required>
-
-<option value="" selected disabled>Seleccioná un servicio</option>
-
-<option>💦 Lavado Exterior ($500)</option>
-
-<option>🧽 Lavado + Descontaminado ($2.500)</option>
-
-<option>🛡️ Descontaminado + Sellado Cerámico ($5.000)</option>
-
-<option>✨ Pulido y Eliminación de Micro Rayas ($4.500)</option>
-
-<option>💎 Tratamiento Cerámico Completo ($7.500)</option>
-
-<option>🔦 Pulido de Ópticas ($2.000)</option>
-
-<option>🧼 Lavado de Motor ($5.000)</option>
-
-<option>🪑 Lavado de Butacas ($2.000)</option>
-
-<option>🔥 Lavado de Butacas + Lavado Exterior ($3.500)</option>
-
-</select>
-</div>
-
-<div class="col-md-6">
-<label class="form-label">Fecha deseada</label>
-<input type="date" class="form-control" id="fecha" required>
-</div>
-
-<div class="col-md-6">
-<label class="form-label">Hora aproximada</label>
-<input type="time" class="form-control" id="hora">
-</div>
-
-<div class="col-12">
-<label class="form-label">Comentarios</label>
-<textarea class="form-control" id="comentario" rows="3" placeholder="Ej: manchas en butacas, rayas en pintura, etc."></textarea>
-</div>
-
-<div class="col-12 mt-4">
-<button type="submit" class="btn btn-main w-100 py-3">
-Enviar reserva por WhatsApp
-</button>
-</div>
-
-</div>
-
-</form>
-
-</div>
-</div>
-</div>
-</div>
+<!-- GALERÍA carrusel antes/después -->
+<section class="container gallery">
+    <h2>📸 Galería de trabajos</h2>
+    <div class="carousel-track">
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1632245889029-e416f7f5b3e5?q=80&w=1974&auto=format&fit=crop" alt="detailing before after">
+            <div class="badge"><span>ANTES</span> <span>DESPUÉS</span></div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1632245889342-37a5a6b3acf3?q=80&w=1974&auto=format&fit=crop" alt="faros restaurados">
+            <div class="badge"><span>ÓPTICAS</span> <span>RESTAURADAS</span></div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1627453955603-f0d06b826ad2?q=80&w=1974&auto=format&fit=crop" alt="interior limpio">
+            <div class="badge"><span>INTERIOR</span> <span>RENOVADO</span></div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1612825173281-9a193378527e?q=80&w=1974&auto=format&fit=crop" alt="auto negro brillo espejo">
+            <div class="badge"><span>PULIDO</span> <span>ESPEJO</span></div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1603584173870-7be23a59b2c7?q=80&w=2069&auto=format&fit=crop" alt="espuma de lavado">
+            <div class="badge"><span>ESPUMA</span> <span>ACTIVA</span></div>
+        </div>
+    </div>
 </section>
 
+<!-- RESERVAR TURNO -->
+<section class="container" id="reserva">
+    <h2>📋 Reservar turno</h2>
+    <div class="reserva-form">
+        <form id="reservaWhatsapp">
+            <div class="form-grid">
+                <div class="form-group"><label>Nombre</label><input type="text" id="nombre" required placeholder="Ej. Juan Pérez"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" id="telefono" required placeholder="+598 99 123 456"></div>
+                <div class="form-group"><label>Vehículo</label><input type="text" id="vehiculo" required placeholder="Ej. VW Gol 2018"></div>
+                <div class="form-group"><label>Servicio</label>
+                    <select id="servicio" required>
+                        <option value="">Elegí un servicio</option>
+                        <option value="Plan Básico $500">Plan Básico – $500</option>
+                        <option value="Lavado Premium $1200">Lavado Premium – $1200</option>
+                        <option value="Pulido de Ópticas $2000">Pulido de Ópticas – $2000</option>
+                        <option value="Lavado de Butacas con Vapor $2000">Butacas Vapor – $2000</option>
+                        <option value="Limpieza Tapizados Premium $3500">Tapizados Premium – $3500</option>
+                        <option value="Descontaminado + Sellado $5000">Descontaminado + Sellado – $5000</option>
+                        <option value="Servicio Premium Completo $7500">Premium Completo – $7500</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Fecha</label><input type="date" id="fecha" required></div>
+                <div class="form-group full"><label>Mensaje (opcional)</label><textarea id="mensaje" placeholder="Contanos alguna particularidad..."></textarea></div>
+            </div>
+            <button type="submit" class="btn" style="margin-top: 30px; width: 100%;">📲 Reservar ahora por WhatsApp</button>
+        </form>
+    </div>
+</section>
 
+<!-- UBICACIÓN + WHATSAPP -->
+<section class="container">
+    <div class="ubicacion-card">
+        <div>
+            <h3 style="font-size: 2rem; margin-bottom: 8px;">📍 Canelones / Las Piedras</h3>
+            <p style="color: #aaa; font-size: 1.2rem;">Atendemos en tu domicilio o punto de encuentro</p>
+        </div>
+        <a href="https://wa.me/59892214516?text=Hola%20Eze%20Detailing%2C%20quiero%20consultar%20un%20turno" target="_blank" class="btn btn-outline btn-wsp" style="border-color:#25D366; background:#25D36620;"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-content">
+        <div>
+            <h3 style="font-size: 2.2rem; color: var(--accent-red);">Eze Detailing</h3>
+            <p style="font-size: 1.2rem; font-style: italic; color: #ccc">“Tu vehículo limpio no… detallado.”</p>
+        </div>
+        <div class="social">
+            <a href="https://instagram.com/ezedetailing" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/59892214516" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <div class="container" style="text-align: center; margin-top: 40px; color: #555; font-size: 0.9rem;">
+        © 2025 Eze Detailing – Detailing profesional
+    </div>
+</footer>
+
+<!-- SCRIPT: envío por WhatsApp con número actualizado -->
 <script>
-
-document.getElementById("reservaForm").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const nombre = document.getElementById("nombre").value;
-const modelo = document.getElementById("modelo").value;
-const servicio = document.getElementById("servicio").value;
-const fecha = document.getElementById("fecha").value;
-const hora = document.getElementById("hora").value || "A coordinar";
-const comentario = document.getElementById("comentario").value || "Sin comentarios";
-
-const mensaje = `Hola! Quiero reservar un turno.
-
-👤 Nombre: ${nombre}
-🚗 Vehículo: ${modelo}
-🛠 Servicio: ${servicio}
-📅 Fecha: ${fecha}
-⏰ Hora: ${hora}
-📝 Comentario: ${comentario}
-
-Quedo atento a la confirmación.`;
-
-window.open(`https://wa.me/59892214516?text=${encodeURIComponent(mensaje)}`);
-
-});
-
-</script>
-
-
-    <!-- TESTIMONIOS -->
-    <section class="section" id="testimonios">
-        <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-            <div class="row g-4 mt-3">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">"El auto quedó mejor que cuando lo compré. Atención impecable, superó mis expectativas."</div>
-                        <div class="testimonial-author">— Martín, Montevideo</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">"La protección cerámica es impresionante, el brillo es otro nivel. Muy recomendable."</div>
-                        <div class="testimonial-author">— Rodrigo, Pocitos</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">"El interior quedó como nuevo, eliminó todos los olores. Muy profesionales."</div>
-                        <div class="testimonial-author">— Lucía, Punta Carretas</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAPA + UBICACIÓN -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Encontrános</h2>
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6">
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209315.43214130724!2d-56.25876027690483!3d-34.91094781384894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80b210000001%3A0x8b0f9d54c8132849!2sMontevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1710000000000!5m2!1ses-419!2suy" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="mb-3">Montevideo, Uruguay</h4>
-                    <p class="text-secondary">Trabajamos en toda la zona metropolitana. Coordinamos punto de encuentro o podemos acercarnos a tu domicilio (consultar disponibilidad).</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-whatsapp text-gold me-3 fs-4"></i>
-                        <span>092 214 516 (Solo WhatsApp)</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-clock text-gold me-3 fs-4"></i>
-                        <span>Lunes a Sábado: 9:00 - 19:00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5>ULTRA<span class="text-gold">DETAILING</span></h5>
-                    <p class="text-secondary">Expertos en cuidado automotriz premium en Montevideo. Pasión por los detalles, resultados de exhibición.</p>
-                </div>
-                <div class="col-md-2">
-                    <h5>Enlaces</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#servicios" class="text-secondary">Servicios</a></li>
-                        <li><a href="#reserva" class="text-secondary">Reservas</a></li>
-                        <li><a href="#testimonios" class="text-secondary">Testimonios</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li class="text-secondary">📱 092 214 516</li>
-                        <li class="text-secondary">📧 info@ultradetailing.uy</li>
-                        <li class="text-secondary">📍 Montevideo, Uruguay</li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Seguinos</h5>
-                    <div class="social-icons">
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="border-secondary mt-5">
-            <div class="text-center text-secondary pt-3">
-                © 2025 Ultra Detailing. Todos los derechos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/59892214516?text=Hola!%20Vi%20su%20sitio%20web%20y%20quiero%20consultar%20por%20un%20servicio." class="whatsapp-float" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-    </a>
-
-    <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- SCRIPT DE FORMULARIO -->
-    <script>
-        document.getElementById("reservaForm").addEventListener("submit", function(e){
+    (function() {
+        const form = document.getElementById('reservaWhatsapp');
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const nombre = document.getElementById("nombre").value;
-            const modelo = document.getElementById("modelo").value;
-            const servicio = document.getElementById("servicio").value;
-            const fecha = document.getElementById("fecha").value;
-            const hora = document.getElementById("hora").value || "A convenir";
-            const comentario = document.getElementById("comentario").value || "Sin comentarios";
-            
-            const mensaje = `Hola, soy ${nombre} y quiero reservar un turno para:
-            
-🚗 Vehículo: ${modelo}
-🛠️ Servicio: ${servicio}
-📅 Fecha: ${fecha}
-⏰ Hora: ${hora}
-📝 Comentario: ${comentario}
-            
-Quedo atento a su confirmación. ¡Gracias!`;
-            
-            window.location.href = `https://wa.me/59892214516?text=${encodeURIComponent(mensaje)}`;
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const vehiculo = document.getElementById('vehiculo').value.trim();
+            const servicio = document.getElementById('servicio').value;
+            const fecha = document.getElementById('fecha').value;
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            // Validación simple
+            if (!nombre || !telefono || !vehiculo || !servulo || !servicio ||icio || !f !fecha)echa) {
+                {
+                alert(' alert('Por favorPor favor completá completá los campos los campos oblig obligatoratorios.');
+ios.');
+                return;
+                return            }
+
+           ;
+            }
+
+            // Form // Formatear mensajeatear
+            mensaje
+            let texto let texto = `Hola = `Hola Eze Detailing Eze Detailing! Qu! Quiero reserviero reservar un turno:%0ar un turno:%0A%A%0A`;
+           0A`;
+            texto += texto += ` `👤 *Nombre:*👤 *Nombre:* ${nombre}%0A`;
+            ${nombre}%0A`;
+            texto += texto += `📞 * `📞Telé *Teléfono:* ${telefono}fono:* ${telefono}%0A`;
+            texto += `%0A`;
+            texto += `🚗 *Vehículo:* ${vehiculo}%0A`;
+            texto🚗 *Vehículo:* ${vehiculo}%0A`;
+            texto += ` += `🔧 *Serv🔧 *Servicio:*icio:* ${servicio} ${servicio}%0A`;
+%0A`;
+            texto            texto += ` +=📅 `📅 *Fecha *Fecha solicitada solicitada:* ${fecha:* ${fecha}%}%0A0A`;
+           `;
+            if ( if (mensajemensaje) {
+) {
+                texto += `                texto += `💬 *M💬 *Mensajeensaje:* ${:* ${mensajemensaje}%}%0A0A`;
+           `;
+            }
+
+            }
+
+            // N // Número de WhatsApp actualizadoúmero de WhatsApp actualizado ( (EEze Detze Detailing)
+ailing)
+            const            const numero = '59892214516';
+            numero = '59892214516';
+            const const url = url = `https `https://wa.me/${://wanumero}.me/${?textnumero}?text=${text=${texto}`;
+
+           o}` window.open;
+
+            window.open(url, '_blank(url,');
+ '_blank        });
+
+       ');
         });
-    </script>
+
+        // Botones de // Bot "Seones de "Seleccionleccionar"ar" en en tarjetas tarjetas: prec: precarganargan servicio en servicio en el combo el combo y despl y desplazan
+azan
+        document        document.querySelectorAll.querySelectorAll('.btn('.btn-card').-card').forEach(forEach(btn =>btn => {
+            {
+            btn.addEventListener btn.addEventListener('click('click', (', (e)e) => {
+ => {
+                e                e.preventDefault();
+                const card = e.target.preventDefault();
+                const card = e.target.closest.closest('.service-card('.service-card');
+');
+                if (!card                if (!card) return) return;
+                const;
+                const tit titulo =ulo = card.querySelector card.querySelector('h3('h3')')?.inner?.innerText;
+Text;
+                const precio =                const precio = card.querySelector('.price') card.querySelector('.price?.')?.innerTextinnerText; //; // ej "$500"
+                // ej "$500"
+                // mapeo simple mapeo simple: buscar en select: buscar en select por texto por texto que cont que contenga titenga titulo (ulo (aproximaproximado)
+ado)
+                const                const select = select = document.getElementById document.getElementById('serv('servicio');
+                consticio');
+                const optionText = tit optionText = titulo +ulo + ' ' ' ' + precio; 
+ + precio; 
+                //                // mejor iter mejor iterar
+ar
+                for                for (let (let opt of opt of select.options select.options) {
+) {
+                    if                    if ( (opt.text.includes(titulo)opt.text.includes(titulo) || (precio && opt || (precio && opt.text.includes.text.includes(precio(precio))) {
+))) {
+                        select                        select.value =.value = opt.value opt.value;
+                       ;
+                        break break;
+;
+                    }
+                    }
+                }
+                }
+                //                // desplazar desplazar a reserva
+                document.getElementById(' a reserva
+reserva').scroll                document.getElementById('IntoViewreserva').scroll({ behaviorIntoView: '({ behavior: 'smooth' });
+            });
+        });
+    })smooth' });
+            });
+        });
+    })();
+</();
+</script>
+<!--script>
+<!-- Fix de fecha Fix de fecha mín mínima (hima (hoy)oy) -->
+<script -->
+<script>
+>
+    (function    (function setMin setMinDate() {
+       Date() {
+        const today const today = new = new Date(). Date().toISOtoISOString().split('String().split('TT')[0];
+')[0];
+        const        const fechaInput fechaInput = document = document.getElementById('fecha');
+       .getElementById('fecha');
+        if ( if (fechafechaInput)Input) fechaInput fechaInput.min =.min = today;
+ today;
+    })    })();
+</();
+</script>
+script>
 </body>
+</</body>
 </html>
+html>
